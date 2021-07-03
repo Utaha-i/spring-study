@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="dog" class="com.utaha.pojo.Dog"/>-->
+<!--    <bean class="com.utaha.pojo.Cat"/>-->
+
+    <!--
+        byName: 会自动在容器上下文中查找，和自己对象set方法后面对应的 bean_id
+    -->
+<!--    <bean id="people" class="com.utaha.pojo.People" autowire="byName">-->
+<!--        <property name="name" value="霞诗子"/>-->
+<!--    </bean>-->
+    <!--
+        byType: 会自动在容器上下文中查找，和自己对象属性类型相同的bean_id
+        （必须保证该类型全局唯一，不然bean标签，直接报错）
+        （byType 不用id 也可以跑通）
+    -->
+<!--    <bean id="people" class="com.utaha.pojo.People" autowire="byType">-->
+<!--        <property name="name" value="霞诗子"/>-->
+<!--    </bean>-->
+
+</beans>

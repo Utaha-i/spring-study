@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.utaha.pojo.Address">
+        <property name="address" value="寿阳"/>
+    </bean>
+    <bean id="student" class="com.utaha.pojo.Student">
+    <!--第一种普通值注入-->
+        <property name="name" value="霞诗子"/>
+    <!--ref引用类型注入-->
+        <property name="address" ref="address"/>
+    <!--数组-->
+        <property name="books">
+            <array>
+                <value>D.A.L</value>
+                <value>overlord</value>
+                <value>DXD</value>
+            </array>
+        </property>
+    <!--list-->
+        <property name="hobbies">
+            <list>
+                <value>A</value>
+                <value>C</value>
+                <value>G</value>
+                <value>N</value>
+            </list>
+        </property>
+    <!--Map-->
+        <property name="card">
+            <map>
+                <entry key="IDCard" value="123456"/>
+                <entry key="Bank" value="45678"/>
+            </map>
+        </property>
+    <!--Set-->
+        <property name="games">
+            <set>
+                <value>Dota</value>
+                <value>Azurlane</value>
+                <value>fgo</value>
+                <value>WOW</value>
+            </set>
+        </property>
+    <!--Null-->
+        <property name="wife">
+            <null/>
+        </property>
+    <!--properties-->
+        <property name="info">
+            <props>
+                <prop key="学号">20210426</prop>
+                <prop key="性别">boy</prop>
+                <prop key="班级">2.2</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

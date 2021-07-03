@@ -1,0 +1,24 @@
+### 注解说明
+- @Autowired 自动装配 先type后name
+- @Qualifier(value="xxx")按name装配
+- @Nullable 字段标记了这个注解，说明这个字段可以为null
+- 
+- @Resource(name="xxx") 自动装配 先name后type
+-   
+- @Component 组件，放在类上，说明这个类被Spring管理了。
+- @Value 放在属性或set方法上，注入值
+-   
+- @Repository
+- @Service
+- @Controller
+- 
+- @Scope("singleton","prototype","request","session") 作用域
+- 
+- @Configuration 使java类等价于XML，其本身也是一个@Component
+- @Bean 注册一个bean，就相当于之前写的一个bean标签 方法名，就相当于bean标签中的id属性 方法返回值，相当于class属性
+-
+- @Aspect 声明类为切面
+- @Pointcut("execution()") 声明切入点
+- @before
+- @after
+- @around   

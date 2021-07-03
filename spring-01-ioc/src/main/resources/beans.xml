@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="mysqlImpl" class="com.utaha.dao.UserDaoMysqlImpl"/>
+    <bean id="oracleImpl" class="com.utaha.dao.UserDaoOracleImpl"/>
+
+    <bean id="UserServiceImpl" class="com.utaha.service.UserServiceImpl">
+    <!--
+    ref 引用spring容器中已经创建好的对象     （引用类型）
+    value 具体类型的值                    （基本类型）
+    -->
+        <property name="userDao" ref="mysqlImpl"/>
+    </bean>
+</beans>

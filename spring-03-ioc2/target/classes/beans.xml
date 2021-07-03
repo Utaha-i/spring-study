@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--使用无参构造器赋值-->
+<!--    <bean id="user" class="com.utaha.pojo.User">-->
+<!--        <property name="name" value="zhangsan"/>-->
+<!--    </bean>-->
+<!--第一种下标赋值-->
+<!--    <bean id="user" class="com.utaha.pojo.User">-->
+<!--        <constructor-arg index="0" value="lisi"/>-->
+<!--    </bean>-->
+<!--第二种通过创建类型（不建议使用）-->
+<!--    <bean id="user" class="com.utaha.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="wangwu"/>-->
+<!--    </bean>-->
+<!--第三种通过参数名来赋值-->
+    <bean id="user" class="com.utaha.pojo.User">
+        <constructor-arg name="name" value="zhaoliu"/>
+    </bean>
+<!--输出打印 "UserT的无参构造" 说明在 取context时 所有bean就被实例化了 -->
+    <bean id="userT" class="com.utaha.pojo.UserT" />
+<!--别名，如果添加了别名，我们也可以通关别名-->
+    <alias name="user" alias="utaha" />
+    <!--
+    id : bean 的唯一标识符，也就是我们学的对象名
+    class : bean 对象所对应的全限定名
+    name : 也是别名，而且 name 更高级，可以同时取多个别名
+    -->
+    <bean id="userT" class="com.utaha.pojo.UserT" name="userT2,u2 u3;u4"/>
+
+</beans>

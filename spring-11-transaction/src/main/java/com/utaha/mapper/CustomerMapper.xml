@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.utaha.mapper.CustomerMapper">
+    <select id="selectCustomer" resultType="Customer">
+        select * from estore.es_customer;
+    </select>
+    
+    <insert id="addCustomer" parameterType="Customer">
+        insert into estore.es_customer(id, name, password)
+        values (#{id}, #{name}, #{password});
+    </insert>
+
+    <delete id="deleteCustomer" parameterType="int">
+        delete FROM estore.es_customer where id = #{id};
+    </delete>
+</mapper>

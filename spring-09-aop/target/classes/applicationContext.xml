@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--注册bean-->
+    <bean id="userService" class="com.utaha.service.impl.UserServiceImpl"/>
+    <bean id="log" class="com.utaha.log.Log"/>
+
+<!--配置aop：需要导入aop约束-->
+    <!--方式一：使用原生的Spring API 接口-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点：expression：表达式 execution（要执行的位置 * * * * *）&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.utaha.service.impl.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;执行环绕增加&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut" />-->
+<!--    </aop:config>-->
+
+    <!--方式二：自定义类来实现AOP-->
+<!--    <bean id="diy" class="com.utaha.diy.DiyPointCut"/>-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;自定义切面 ref为自定义的类&ndash;&gt;-->
+<!--        <aop:aspect ref="diy">-->
+<!--            &lt;!&ndash;配置切入点&ndash;&gt;-->
+<!--            <aop:pointcut id="pointcut" expression="execution(* com.utaha.service.impl.UserServiceImpl.*(..))"/>-->
+<!--            &lt;!&ndash;配置通知&ndash;&gt;-->
+<!--            <aop:before method="before" pointcut-ref="pointcut"/>-->
+<!--            <aop:after method="after" pointcut-ref="pointcut"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+    <!--方式三：使用注解实现AOP-->
+    <!--开启注解支持-->
+    <context:annotation-config/>
+    <!--指定扫描包，这个包下的注解就会生效-->
+    <context:component-scan base-package="com.utaha"/>
+    <!--开启注解支持 JDK动态代理为默认false  cgLib为true-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+</beans>
