@@ -6,8 +6,8 @@
     <!--使用Spring来创建对象，在Spring这些都称为Bean
         类型 变量名 = new 类型();
         bean = 对象  new Hello();
-        id -> 变量名
-        class -> new 的对象
+        id -> 变量名（绳子）
+        class -> new 的对象（气球）
         property 相当于给对象的属性设置 set 一个值
     -->
     <bean id="hello" class="com.utaha.pojo.Hello">
