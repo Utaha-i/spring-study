@@ -19,7 +19,7 @@
         <constructor-arg name="name" value="zhaoliu"/>
     </bean>
 <!--输出打印 "UserT的无参构造" 说明在 取context时 所有bean就被实例化了 -->
-    <bean id="userT" class="com.utaha.pojo.UserT" />
+<!--    <bean id="userT" class="com.utaha.pojo.UserT" />-->
 <!--别名，如果添加了别名，我们也可以通关别名-->
     <alias name="user" alias="utaha" />
     <!--

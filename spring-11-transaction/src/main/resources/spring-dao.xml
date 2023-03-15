@@ -48,7 +48,7 @@
             <tx:method name="delete"/>
             <tx:method name="update"/>
             <tx:method name="query" read-only="true"/>
-            <tx:method name="*" propagation="REQUIRED"/>
+            <tx:method name="*" propagation="REQUIRES_NEW"/>
         </tx:attributes>
     </tx:advice>
     <!--配置事务切入-->

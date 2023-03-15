@@ -20,6 +20,7 @@
         <module>spring-09-aop</module>
         <module>spring-10-mybatis</module>
         <module>spring-11-transaction</module>
+        <module>spring-12-aop2</module>
     </modules>
 
     <dependencies>
@@ -45,10 +46,33 @@
             <artifactId>javax.annotation-api</artifactId>
             <version>1.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.3.5</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>
+        <!--配置maven编译的时候采用的编译器版本-->
+        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
+        <!--指定源代码是什么版本 ，如果源码和这个版本不符将报错，maven中执行编译的时候会用到这个配置，
+        默认是1.5，这个相当于javac命令后面的source参数-->
         <maven.compiler.source>11</maven.compiler.source>
+        <!--该命令用于指定生成的class文件保证和哪个版本的虚拟机进行兼容，maven中执行编译的时候会用到这个配置，
+        默认是1.5，这个相当于javac命令后面的-target参数-->
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 

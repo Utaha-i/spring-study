@@ -4,6 +4,8 @@ import com.utaha.service.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.HashMap;
+
 public class Demo {
     public static void main(String[] args) {
 
@@ -14,6 +16,8 @@ public class Demo {
 
         userService.getUser();
 
+        HashMap<Integer,String> HASH_MAP = new HashMap<>();
+        HASH_MAP = new HashMap<>(16);
 
         //获取ApplicationContext：拿到Spring的容器
 //        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");

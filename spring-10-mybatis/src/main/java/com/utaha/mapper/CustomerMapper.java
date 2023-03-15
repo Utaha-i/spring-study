@@ -5,5 +5,5 @@ import com.utaha.pojo.Customer;
 import java.util.List;
 
 public interface CustomerMapper {
-    public List<Customer> selectCustomer();
+    List<Customer> selectCustomer();
 }

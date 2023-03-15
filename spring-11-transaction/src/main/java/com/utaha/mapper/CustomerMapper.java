@@ -5,9 +5,9 @@ import com.utaha.pojo.Customer;
 import java.util.List;
 
 public interface CustomerMapper {
-    public List<Customer> selectCustomer();
+    List<Customer> selectCustomer();
 
-    public int addCustomer(Customer customer);
+    int addCustomer(Customer customer);
 
-    public int deleteCustomer(int id);
+    int deleteCustomer(int id);
 }

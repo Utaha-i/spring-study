@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 public class AnnotationPointCut {
     //配置PointCut
     @Pointcut("execution(* com.utaha.service.impl.UserServiceImpl.*(..))")
-    public void pointCut() {
-
-    }
+    public void pointCut() {}
 
     @Before(value = "pointCut()")
     public void before() {

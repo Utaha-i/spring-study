@@ -5,6 +5,7 @@ import com.utaha.pojo.Customer;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
+import java.util.Hashtable;
 import java.util.List;
 
 public class CustomerMapperImpl extends SqlSessionDaoSupport implements CustomerMapper {
